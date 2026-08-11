@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Oil | Especialistas em Troca de Óleo em Palhoça/SC</title>
+    <meta name="description"
+        content="Tech Oil em Palhoça/SC. Especialistas em troca de óleo de motor e câmbio, manutenção preventiva e muito mais. Ligue: (48) 98855-6565.">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-blue': '#111111',
+                        'brand-blue-mid': '#1a1a1a',
+                        'brand-blue-light': '#262626',
+                        'brand-yellow': '#FFC107',
+                        'brand-yellow-hover': '#FFB300',
+                        'brand-red': '#E53935',
+                        'dark-bg': '#000000',
+                        'dark-card': '#0A0A0A',
+                        'dark-border': '#222222',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #000000;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #222222;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FFC107;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-slide-down {
+            animation: slideDown 0.25s ease-out forwards;
+        }
+
+        .reveal-section {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.65s ease-out, transform 0.65s ease-out;
+        }
+
+        .reveal-section.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero gradient overlay */
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(10, 10, 10, 0.85) 50%, rgba(0, 0, 0, 0.95) 100%);
+        }
+
+        /* Yellow glow button */
+        .btn-yellow {
+            background: linear-gradient(135deg, #FFC107, #FFB300);
+            color: #000000;
+            font-weight: 800;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 20px rgba(255, 193, 7, 0.35);
+        }
+
+        .btn-yellow:hover {
+            background: linear-gradient(135deg, #FFD54F, #FFC107);
+            box-shadow: 0 6px 28px rgba(255, 193, 7, 0.55);
+            transform: translateY(-1px);
+        }
+
+        /* Service card hover */
+        .service-card {
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(255, 193, 7, 0.15);
+        }
+
+        /* Hex pattern background */
+        .hex-bg {
+            background-color: #000000;
+            background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.06) 1px, transparent 0);
+            background-size: 32px 32px;
+        }
+
+        /* Wave shape */
+        .wave-top {
+            position: absolute;
+            top: -1px;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+
+        .wave-bottom {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+
+        /* Stats counter glow */
+        .stat-number {
+            background: linear-gradient(135deg, #FFC107, #FF8F00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Icon circle */
+        .icon-circle {
+            background: linear-gradient(135deg, #FFC107, #FFB300);
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 4px 16px rgba(255, 193, 7, 0.4);
+        }
+
+        /* Floating WhatsApp pulse */
+        @keyframes waPulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+            }
+
+            70% {
+                box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        .wa-float {
+            animation: waPulse 2.2s infinite;
+        }
+
+        /* Underline accent */
+        .accent-line {
+            display: block;
+            width: 52px;
+            height: 4px;
+            background: linear-gradient(90deg, #FFC107, #FF8F00);
+            border-radius: 2px;
+            margin: 12px 0 0 0;
+        }
+
+        /* Logo text glow on header scroll */
+        .logo-text {
+            text-shadow: 0 0 30px rgba(255, 193, 7, 0.4);
+        }
+
+        /* FAQ active */
+        .faq-item {
+            border-bottom: 1px solid #1E2D5A;
+            transition: background 0.2s;
+        }
+
+        .faq-item:hover {
+            background: rgba(255, 193, 7, 0.04);
+        }
+
+        /* Dialysis Simulation Styles */
+        .hose-connection-point {
+            transition: all 0.3s ease;
+            z-index: 20;
+        }
+
+        .hose-connection-point.active {
+            transform: scale(1.15);
+            box-shadow: 0 0 25px currentColor;
+            z-index: 50;
+        }
+    </style>
+</head>
+
+<body class="bg-dark-bg text-white font-sans antialiased selection:bg-brand-yellow selection:text-dark-bg">
+
+    <!-- ==================== HEADER ==================== -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div
+                        class="w-11 h-11 rounded-full overflow-hidden flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform border border-brand-yellow bg-black">
+                        <img src="assets/logo.svg" alt="Logo Tech Oil" class="w-full h-full object-cover">
+                    </div>
+                    <div class="hidden sm:block">
+                        <p class="font-display font-900 text-white text-base leading-none logo-text">Tech Oil</p>
+                        <p class="text-brand-yellow text-[10px] font-semibold tracking-widest uppercase">Troca de Óleo</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex items-center space-x-7">
+                    <a href="#services"
+                        class="text-sm font-medium text-gray-300 hover:text-brand-yellow transition-colors">Serviços</a>
+                    <a href="#why-us"
+                        class="text-sm font-medium text-gray-300 hover:text-brand-yellow transition-colors">Diferenciais</a>
+                    <a href="#reviews"
+                        class="text-sm font-medium text-gray-300 hover:text-brand-yellow transition-colors">Depoimentos</a>
+                    <a href="#location"
+                        class="text-sm font-medium text-gray-300 hover:text-brand-yellow transition-colors">Localização</a>
+                </nav>
+
+                <!-- CTA Desktop -->
+                <div class="hidden md:flex items-center gap-3">
+                    <a href="https://wa.me/5548988556565?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento."
+                        target="_blank" rel="noopener"
+                        class="btn-yellow px-5 py-2.5 rounded-lg text-sm font-display font-bold tracking-wide flex items-center gap-2">
+                        <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.733-1.455L0 24z" />
+                        </svg>
+                        WhatsApp
+                    </a>
+                </div>
+
+                <!-- Mobile Hamburger -->
+                <div class="md:hidden flex items-center gap-2">
+                    <a href="https://wa.me/5548988556565" target="_blank"
+                        class="btn-yellow px-4 py-2 rounded-lg text-xs font-bold">WhatsApp</a>
+                    <button id="menu-toggle"
+                        class="p-2 text-gray-300 bg-dark-card border border-dark-border rounded-md hover:text-white focus:outline-none">
+                        <i id="menu-icon" data-lucide="menu" class="h-5 w-5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-dark-bg/98 border-b border-dark-border px-4 pt-4 pb-6 space-y-3 shadow-2xl">
+            <nav class="flex flex-col space-y-1">
+                <a href="#services" onclick="toggleMobileMenu()"
+                    class="text-base font-medium text-gray-300 hover:text-brand-yellow px-3 py-2.5 rounded-md hover:bg-dark-card">Serviços</a>
+                <a href="#why-us" onclick="toggleMobileMenu()"
+                    class="text-base font-medium text-gray-300 hover:text-brand-yellow px-3 py-2.5 rounded-md hover:bg-dark-card">Diferenciais</a>
+                <a href="#reviews" onclick="toggleMobileMenu()"
+                    class="text-base font-medium text-gray-300 hover:text-brand-yellow px-3 py-2.5 rounded-md hover:bg-dark-card">Depoimentos</a>
+                <a href="#location" onclick="toggleMobileMenu()"
+                    class="text-base font-medium text-gray-300 hover:text-brand-yellow px-3 py-2.5 rounded-md hover:bg-dark-card">Localização</a>
+            </nav>
+            <div class="pt-4 border-t border-dark-border">
+                <a href="https://wa.me/5548988556565?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento."
+                    class="w-full flex items-center justify-center gap-2 btn-yellow py-3.5 rounded-lg text-sm font-display font-bold">
+                    <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.733-1.455L0 24z" />
+                    </svg>
+                    SOLICITAR ORÇAMENTO
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== HERO ==================== -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-start overflow-hidden bg-black"
+        style="background-image: url('https://images.unsplash.com/photo-1632823471406-4c5c7e4c6f24?auto=format&fit=crop&w=1800&q=80'); background-size: cover; background-position: center;">
+        <!-- Dark overlay -->
+        <div class="hero-overlay absolute inset-0 z-0"></div>
+        <!-- Bottom fade -->
+        <div
+            class="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-dark-bg to-transparent z-10 pointer-events-none">
+        </div>
+
+        <!-- Decorative circle -->
+        <div class="absolute top-20 right-10 w-72 h-72 bg-brand-yellow/5 rounded-full blur-3xl pointer-events-none">
+        </div>
+        <div
+            class="absolute bottom-32 right-32 w-48 h-48 bg-brand-yellow/10 rounded-full blur-2xl pointer-events-none">
+        </div>
+
+        <div class="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-24 md:pt-40 md:pb-32">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Text Column -->
+                <div class="lg:col-span-6">
+                    <!-- Badges -->
+                    <div class="flex flex-wrap gap-3 mb-7">
+                        <span
+                            class="inline-flex items-center gap-2 bg-brand-yellow/15 text-brand-yellow font-mono text-xs font-bold px-4 py-2 rounded-full border border-brand-yellow/30 uppercase tracking-widest">
+                            <span class="h-2 w-2 bg-brand-yellow rounded-full animate-ping"></span>
+                            Troca de Óleo em Palhoça
+                        </span>
+                        <span
+                            class="inline-flex items-center gap-2 bg-white/10 text-white font-mono text-xs font-bold px-4 py-2 rounded-full border border-white/20 uppercase tracking-widest">
+                            <i data-lucide="star" class="h-3 w-3 fill-brand-yellow text-brand-yellow"></i>
+                            5,0 | 801 avaliações no Google
+                        </span>
+                    </div>
+
+                    <div class="flex items-center gap-4 sm:gap-6 mb-6">
+                        <div
+                            class="w-20 h-20 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-2xl overflow-hidden border-2 border-brand-yellow/60 bg-black shadow-2xl shadow-brand-yellow/20 shrink-0 flex items-center justify-center group hover:scale-105 transition-all duration-300">
+                            <img src="assets/logo.svg" alt="Logo Tech Oil" class="w-full h-full object-cover">
+                        </div>
+                        <h1
+                            class="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold tracking-tight text-white leading-none">
+                            Tech Oil <br>
+                            <span class="text-brand-yellow">Troca de Óleo</span>
+                        </h1>
+                    </div>
+
+                    <p class="text-gray-200 text-base sm:text-lg leading-relaxed mb-3 font-light">
+                        <strong class="text-white font-semibold">Condições imperdíveis</strong> e a <strong
+                            class="text-white font-semibold">qualidade</strong> que seu veículo merece.
+                    </p>
+                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed mb-10">
+                        Venha para a oficina que virou <strong class="text-brand-yellow font-bold">referência</strong> em
+                        toda a região de Palhoça.<br>
+                        Clique abaixo e entre em contato para <strong class="text-white font-bold">solicitar seu
+                            orçamento.</strong>
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://wa.me/5548988556565?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento."
+                            target="_blank"
+                            class="btn-yellow flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-display font-extrabold tracking-wide shadow-xl">
+                            <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.733-1.455L0 24z" />
+                            </svg>
+                            WhatsApp
+                        </a>
+                        <a href="#services"
+                            class="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-xl text-base font-display font-bold border border-white/20 hover:border-white/40 transition-all">
+                            <i data-lucide="wrench" class="h-4 w-4"></i>
+                            Ver Serviços
+                        </a>
+                    </div>
+
+                    <!-- Quick info strip -->
+                    <div class="flex flex-wrap gap-6 mt-12">
+                        <div class="flex items-center gap-2 text-gray-300 text-xs">
+                            <i data-lucide="map-pin" class="h-4 w-4 text-brand-yellow"></i>
+                            Av. Atílio Pedro Pagani, 1429 - Palhoça/SC
+                        </div>
+                        <div class="flex items-center gap-2 text-gray-300 text-xs">
+                            <i data-lucide="phone" class="h-4 w-4 text-brand-yellow"></i>
+                            (48) 98855-6565
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Column / Hero Carousel -->
+                <div class="lg:col-span-6 relative mt-8 lg:mt-0">
+                    <div id="hero-carousel" class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-brand-yellow/30 hover:border-brand-yellow/60 transition-all duration-500 group aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] w-full bg-dark-card">
+                        
+                        <!-- Slides Container -->
+                        <div id="carousel-slides" class="flex w-full h-full transition-transform duration-700 ease-in-out">
+                            <div class="w-full h-full flex-shrink-0 relative">
+                                <img src="assets/fachada.png" alt="Fachada Tech Oil" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
+                            </div>
+                            <div class="w-full h-full flex-shrink-0 relative">
+                                <img src="assets/hero02.png" alt="Tech Oil 2" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
+                            </div>
+                            <div class="w-full h-full flex-shrink-0 relative">
+                                <img src="assets/hero03.png" alt="Tech Oil 3" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
+                            </div>
+                            <div class="w-full h-full flex-shrink-0 relative">
+                                <img src="assets/hero04.png" alt="Tech Oil 4" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
+                            </div>
+                        </div>
+
+                        <!-- Prev / Next Navigation Buttons -->
+                        <button id="carousel-prev" aria-label="Imagem Anterior" class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 hover:bg-brand-yellow text-white hover:text-black border border-white/20 flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 z-20 backdrop-blur-sm cursor-pointer">
+                            <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                        </button>
+                        <button id="carousel-next" aria-label="Próxima Imagem" class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 hover:bg-brand-yellow text-white hover:text-black border border-white/20 flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 z-20 backdrop-blur-sm cursor-pointer">
+                            <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                        </button>
+
+                        <!-- Slide Indicators / Dots -->
+                        <div id="carousel-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 z-20 bg-black/50 px-3.5 py-1.5 rounded-full border border-white/10 backdrop-blur-md">
+                            <button class="carousel-dot w-2.5 h-2.5 rounded-full bg-brand-yellow w-6 transition-all duration-300 cursor-pointer" data-index="0" aria-label="Slide 1"></button>
+                            <button class="carousel-dot w-2.5 h-2.5 rounded-full bg-white/40 hover:bg-white transition-all duration-300 cursor-pointer" data-index="1" aria-label="Slide 2"></button>
+                            <button class="carousel-dot w-2.5 h-2.5 rounded-full bg-white/40 hover:bg-white transition-all duration-300 cursor-pointer" data-index="2" aria-label="Slide 3"></button>
+                            <button class="carousel-dot w-2.5 h-2.5 rounded-full bg-white/40 hover:bg-white transition-all duration-300 cursor-pointer" data-index="3" aria-label="Slide 4"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SERVIÇOS ==================== -->
+    <section id="services" class="py-24 bg-dark-bg scroll-mt-10 relative overflow-hidden">
+        <!-- BG decoration -->
+        <div
+            class="absolute top-0 left-0 w-80 h-80 bg-brand-yellow/4 rounded-full blur-3xl pointer-events-none -translate-x-1/2 -translate-y-1/2">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal-section">
+            <!-- Header -->
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-brand-yellow font-semibold font-mono tracking-wider uppercase text-xs">O que
+                    oferecemos</span>
+                <h2 class="text-3xl sm:text-4xl font-display font-extrabold tracking-tight mt-3 mb-4">
+                    Aqui na <span class="text-brand-yellow">Tech Oil</span> você encontra:
+                </h2>
+                <span class="accent-line mx-auto"></span>
+            </div>
+
+            <!-- Grid 3 columns -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Serviço 1: Troca de óleo de motor -->
+                <div
+                    class="service-card bg-dark-card border border-dark-border rounded-2xl p-7 flex flex-col gap-5 shadow-xl hover:border-brand-yellow/40 group">
+                    <div class="icon-circle">
+                        <svg class="w-6 h-6 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22a7 7 0 0 0 7-7c0-4.3-7-13-7-13S5 10.7 5 15a7 7 0 0 0 7 7z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3
+                            class="text-xl font-display font-extrabold text-white mb-3 group-hover:text-brand-yellow transition-colors">
+                            Troca de óleo de motor</h3>
+                        <ul class="space-y-1.5 text-gray-300 text-sm">
+                            <li class="flex items-start gap-2"><span class="text-brand-yellow mt-0.5">-</span> Óleos sintéticos e semissintéticos;</li>
+                            <li class="flex items-start gap-2"><span class="text-brand-yellow mt-0.5">-</span> Filtros de óleo, ar e cabine;</li>
+                            <li class="flex items-start gap-2"><span class="text-brand-yellow mt-0.5">-</span> Lubrificantes homologados;</li>
+                            <li class="flex items-start gap-2"><span class="text-brand-yellow mt-0.5">-</span> Melhores marcas do mercado.</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/5548988556565?text=Olá,%20quero%20agendar%20troca%20de%20óleo%20de%20motor."
+                        target="_blank"
+                        class="mt-auto inline-flex items-center gap-2 text-xs font-bold text-brand-yellow hover:text-white transition-colors font-display tracking-wide uppercase">
+                        Solicitar Orçamento <i data-lucide="arrow-right" class="h-3.5 w-3.5"></i>
+                    </a>
+                </div>
+
+                <!-- Serviço 2: Troca de óleo de câmbio -->
+                <div
+                    class="service-card bg-dark-card border border-dark-border rounded-2xl p-7 flex flex-col gap-5 shadow-xl hover:border-brand-yellow/40 group">
+                    <div class="icon-circle">
+                        <svg class="w-6 h-6 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.1a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/>
+                            <path d="M12 15.5a2.5 2.5 0 0 0 2.5-2.5c0-1.5-2.5-4.5-2.5-4.5s-2.5 3-2.5 4.5a2.5 2.5 0 0 0 2.5 2.5z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3
+                            class="text-xl font-display font-extrabold text-white mb-3 group-hover:text-brand-yellow transition-colors">
+                            Troca de óleo de câmbio</h3>
+                        <ul class="space-y-1.5 text-gray-300 text-sm">
+                            <li class="flex items-start gap-2"><span class="text-brand-yellow mt-0.5">-</span> Diálise de câmbio automático;</li>
+                            <li class="flex items-start gap-2"><span class="text-brand-yellow mt-0.5">-</span> Fluidos ATF homologados;</li>
+                            <li class="flex items-start gap-2"><span class="text-brand-yellow mt-0.5">-</span> Equipamentos de última geração;</li>
+                            <li class="flex items-start gap-2"><span class="text-brand-yellow mt-0.5">-</span> Prevenção contra quebras e trancos.</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/5548988556565?text=Olá,%20quero%20orçamento%20para%20troca%20de%20óleo%20de%20câmbio."
+                        target="_blank"
+                        class="mt-auto inline-flex items-center gap-2 text-xs font-bold text-brand-yellow hover:text-white transition-colors font-display tracking-wide uppercase">
+                        Solicitar Orçamento <i data-lucide="arrow-right" class="h-3.5 w-3.5"></i>
+                    </a>
+                </div>
+
+                <!-- Serviço 3: Revisão Geral -->
+                <div
+                    class="service-card bg-dark-card border border-dark-border rounded-2xl p-7 flex flex-col gap-5 shadow-xl hover:border-brand-yellow/40 group">
+                    <div class="icon-circle">
+                        <svg class="w-6 h-6 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+                            <rect x="8" y="2" width="8" height="4" rx="1" ry="1" fill="currentColor" />
+                            <path d="M9 10h6M9 14h6M9 18h4" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3
+                            class="text-xl font-display font-extrabold text-white mb-3 group-hover:text-brand-yellow transition-colors">
+                            Revisão Geral</h3>
+                        <ul class="space-y-1.5 text-gray-300 text-sm">
+                            <li class="flex items-start gap-2"><span class="text-brand-yellow mt-0.5">-</span> Check-up de segurança completo;</li>
+                            <li class="flex items-start gap-2"><span class="text-brand-yellow mt-0.5">-</span> Inspeção de fluidos e filtros;</li>
+                            <li class="flex items-start gap-2"><span class="text-brand-yellow mt-0.5">-</span> Verificação de suspensão, freios e pneus;</li>
+                            <li class="flex items-start gap-2"><span class="text-brand-yellow mt-0.5">-</span> Diagnóstico com relatório técnico.</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/5548988556565?text=Olá,%20gostaria%20de%20agendar%20uma%20Revisão%20Geral%20no%20meu%20veículo."
+                        target="_blank"
+                        class="mt-auto inline-flex items-center gap-2 text-xs font-bold text-brand-yellow hover:text-white transition-colors font-display tracking-wide uppercase">
+                        Solicitar Orçamento <i data-lucide="arrow-right" class="h-3.5 w-3.5"></i>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- CTA Banner -->
+            <div class="mt-16 text-center">
+                <a href="https://wa.me/5548988556565?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento."
+                    target="_blank"
+                    class="btn-yellow inline-flex items-center gap-3 px-10 py-4 rounded-xl text-base font-display font-extrabold shadow-xl">
+                    <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.733-1.455L0 24z" />
+                    </svg>
+                    Solicitar orçamento pelo WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== INTERATIVO: DIÁLISE DE CÂMBIO ==================== -->
+    <section id="dialysis-interactive" class="py-24 bg-dark-card relative overflow-hidden border-y border-dark-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-brand-yellow font-semibold font-mono tracking-wider uppercase text-xs">Experiência
+                    Interativa</span>
+                <h2 class="text-3xl sm:text-4xl font-display font-extrabold tracking-tight mt-3 mb-4">
+                    Simulador de <span class="text-brand-yellow">Diálise de Câmbio</span>
+                </h2>
+                <p class="text-gray-400 text-sm">Arraste a ponta da mangueira com o mouse e conecte aos sensores para
+                    descobrir a importância da manutenção.</p>
+            </div>
+
+            <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-dark-bg/50 rounded-3xl p-6 sm:p-10 border border-dark-border min-h-[600px]"
+                id="interaction-container">
+                
+                <!-- Canvas para a mangueira, movido para o container pai para não ser cortado no mobile -->
+                <canvas id="hose-canvas" class="absolute inset-0 w-full h-full z-10 pointer-events-none rounded-3xl"></canvas>
+
+                <!-- Máquina de Diálise -->
+                <div class="lg:col-span-4 flex flex-col items-center">
+                    <div id="dialysis-machine"
+                        class="w-52 h-80 bg-gradient-to-b from-gray-700 to-gray-900 rounded-t-3xl border-4 border-brand-yellow relative shadow-2xl overflow-hidden z-20">
+                        <!-- Painel de Vidro com Óleo -->
+                        <div
+                            class="absolute top-8 inset-x-4 h-24 bg-black/40 rounded border border-white/10 flex gap-1 p-1">
+                            <div class="flex-1 bg-red-900/80 relative overflow-hidden">
+                                <div class="absolute inset-0 bg-red-600 animate-pulse opacity-50"></div>
+                                <span class="absolute bottom-1 left-1 text-[8px] font-bold text-white">ÓLEO VELHO</span>
+                            </div>
+                            <div class="flex-1 bg-green-900/80 relative overflow-hidden">
+                                <div class="absolute inset-0 bg-green-500 opacity-30"></div>
+                                <span class="absolute bottom-1 left-1 text-[8px] font-bold text-white">ÓLEO NOVO</span>
+                            </div>
+                        </div>
+                        <!-- Manômetro -->
+                        <div class="absolute bottom-12 inset-x-4 text-center">
+                            <div class="text-[10px] text-gray-400 font-mono mb-1 uppercase tracking-tighter">Fluxo de
+                                Pressão ATF</div>
+                            <div class="text-2xl font-black text-brand-yellow font-mono tabular-nums" id="pressure-val">
+                                12.4</div>
+                        </div>
+                        <!-- Conector de Saída -->
+                        <div id="hose-origin"
+                            class="absolute bottom-24 -right-2 w-6 h-10 bg-brand-yellow rounded-l-md border-2 border-white shadow-lg z-30">
+                        </div>
+                    </div>
+                    <p class="mt-4 text-brand-yellow font-bold text-[10px] uppercase tracking-widest animate-pulse">
+                        Máquina Conectada</p>
+                </div>
+
+                <!-- Área de Interação da Mangueira -->
+                <div class="lg:col-span-8 relative h-[500px] w-full z-50" id="canvas-area">
+
+                    <!-- Pontos de Conexão -->
+                    <!-- 1. Preventiva -->
+                    <div class="hose-connection-point absolute top-10 right-10 md:right-20 group cursor-pointer text-green-500"
+                        data-type="preventiva">
+                        <div
+                            class="w-14 h-14 rounded-full bg-dark-card border-2 border-current flex items-center justify-center transition-all z-20 relative">
+                            <i data-lucide="shield-check" class="w-7 h-7"></i>
+                        </div>
+                        <div
+                            class="info-card absolute right-16 top-0 w-64 opacity-0 scale-95 pointer-events-none transition-all bg-white p-4 rounded-xl text-dark-bg z-40 shadow-2xl">
+                            <h4 class="font-display font-black text-green-600 uppercase text-sm mb-1 italic">Manutenção
+                                Preventiva</h4>
+                            <p class="text-xs leading-relaxed font-medium">Recomendada a cada 50.000km ou 3 anos. Mantém
+                                as propriedades viscosas, evitando desgaste prematuro dos pacotes de embreagem.</p>
+                            <a href="https://wa.me/5548988556565?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Manutenção%20Preventiva%20de%20Câmbio." target="_blank" class="mt-3 w-full flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white py-2 px-3 rounded-lg text-[10px] font-bold uppercase transition-colors pointer-events-auto">
+                                <i data-lucide="message-circle" class="h-3.5 w-3.5"></i> Chamar no WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 2. Corretiva -->
+                    <div class="hose-connection-point absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 group cursor-pointer text-brand-yellow"
+                        data-type="corretiva">
+                        <div
+                            class="w-14 h-14 rounded-full bg-dark-card border-2 border-current flex items-center justify-center transition-all z-20 relative">
+                            <i data-lucide="wrench" class="w-7 h-7"></i>
+                        </div>
+                        <div
+                            class="info-card absolute top-16 -left-20 w-64 opacity-0 scale-95 pointer-events-none transition-all bg-white p-4 rounded-xl text-dark-bg z-40 shadow-2xl text-center">
+                            <h4 class="font-display font-black text-brand-yellow-hover uppercase text-sm mb-1 italic">
+                                Manutenção Corretiva</h4>
+                            <p class="text-xs leading-relaxed font-medium">Necessária quando o câmbio apresenta trancos
+                                ou "patinação". Aqui o óleo já perdeu sua função e contém limalhas de metal.</p>
+                            <a href="https://wa.me/5548988556565?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Manutenção%20Corretiva%20de%20Câmbio." target="_blank" class="mt-3 w-full flex items-center justify-center gap-2 bg-brand-yellow hover:bg-brand-yellow-hover text-dark-bg py-2 px-3 rounded-lg text-[10px] font-bold uppercase transition-colors pointer-events-auto">
+                                <i data-lucide="message-circle" class="h-3.5 w-3.5"></i> Chamar no WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 3. Riscos -->
+                    <div class="hose-connection-point absolute bottom-10 right-10 md:right-32 group cursor-pointer text-brand-red"
+                        data-type="riscos">
+                        <div
+                            class="w-14 h-14 rounded-full bg-dark-card border-2 border-current flex items-center justify-center transition-all z-20 relative">
+                            <i data-lucide="alert-triangle" class="w-7 h-7"></i>
+                        </div>
+                        <div
+                            class="info-card absolute bottom-full mb-4 -right-10 md:right-0 w-72 opacity-0 scale-95 pointer-events-none transition-all bg-brand-red p-5 rounded-xl text-white z-40 shadow-2xl border-2 border-white/20">
+                            <h4 class="font-display font-black uppercase text-base mb-1 italic">⚠️ Câmbio Quebrado / Condenado
+                            </h4>
+                            <p class="text-xs leading-relaxed font-bold">O câmbio já quebrou, o veículo não engata marchas e não anda! Sem nenhuma pressão de óleo, a transmissão sofreu falha crítica. A única solução agora é a retífica completa. Custo médio de reparo: <span
+                                    class="text-brand-yellow underline">R$ 12.000 a R$ 25.000</span>.</p>
+                            <a href="https://wa.me/5548988556565?text=Olá,%20meu%20câmbio%20está%20com%20problemas,%20preciso%20de%20ajuda!" target="_blank" class="mt-3 w-full flex items-center justify-center gap-2 bg-white text-brand-red hover:bg-gray-100 py-2 px-3 rounded-lg text-[10px] font-bold uppercase transition-colors pointer-events-auto">
+                                <i data-lucide="message-circle" class="h-3.5 w-3.5"></i> Chamar no WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ==================== DIFERENCIAIS ==================== -->
+    <section id="why-us" class="py-24 bg-dark-bg scroll-mt-10 relative overflow-hidden">
+        <div
+            class="absolute bottom-0 right-0 w-96 h-96 bg-brand-yellow/4 rounded-full blur-3xl pointer-events-none translate-x-1/2 translate-y-1/2">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal-section">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-brand-yellow font-semibold font-mono tracking-wider uppercase text-xs">Por que nos
+                    escolher</span>
+                <h2 class="text-3xl sm:text-4xl font-display font-extrabold tracking-tight mt-3 mb-4">
+                    Por que escolher a <span class="text-brand-yellow">Tech Oil</span>
+                </h2>
+                <span class="accent-line mx-auto"></span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Diferencial 1 -->
+                <div
+                    class="bg-dark-card border border-dark-border rounded-2xl overflow-hidden shadow-xl group hover:border-brand-yellow/40 transition-all duration-300">
+                    <div class="relative h-52 overflow-hidden">
+                        <img src="assets/equipe.png"
+                            alt="Equipe especializada"
+                            class="w-full h-full object-cover group-hover:scale-105 duration-700 transition-all">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-card/90 via-dark-card/20 to-transparent"></div>
+                    </div>
+                    <div class="p-7">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="icon-circle w-10 h-10 min-w-[40px] min-h-[40px]">
+                                <i data-lucide="users" class="h-5 w-5 text-dark-bg stroke-2"></i>
+                            </div>
+                            <h3
+                                class="text-lg font-display font-bold text-white group-hover:text-brand-yellow transition-colors">
+                                Equipe Especializada</h3>
+                        </div>
+                        <p class="text-gray-400 text-sm leading-relaxed">Profissionais qualificados e treinados para
+                            atender todo tipo de veículo com qualidade e segurança.</p>
+                    </div>
+                </div>
+
+                <!-- Diferencial 2 -->
+                <div
+                    class="bg-dark-card border border-dark-border rounded-2xl overflow-hidden shadow-xl group hover:border-brand-yellow/40 transition-all duration-300">
+                    <div class="relative h-52 overflow-hidden">
+                        <img src="assets/equipamentos.png"
+                            alt="Equipamentos modernos"
+                            class="w-full h-full object-cover group-hover:scale-105 duration-700 transition-all">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-card/90 via-dark-card/20 to-transparent"></div>
+                    </div>
+                    <div class="p-7">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="icon-circle w-10 h-10 min-w-[40px] min-h-[40px]">
+                                <i data-lucide="settings" class="h-5 w-5 text-dark-bg stroke-2"></i>
+                            </div>
+                            <h3
+                                class="text-lg font-display font-bold text-white group-hover:text-brand-yellow transition-colors">
+                                Equipamentos Modernos</h3>
+                        </div>
+                        <p class="text-gray-400 text-sm leading-relaxed">Contamos com equipamentos modernos e produtos
+                            de alta qualidade para te oferecer sempre o melhor.</p>
+                    </div>
+                </div>
+
+                <!-- Diferencial 3 -->
+                <div
+                    class="bg-dark-card border border-dark-border rounded-2xl overflow-hidden shadow-xl group hover:border-brand-yellow/40 transition-all duration-300">
+                    <div class="relative h-52 overflow-hidden">
+                        <img src="assets/confiabilidade.png"
+                            alt="Atendimento confiável"
+                            class="w-full h-full object-cover group-hover:scale-105 duration-700 transition-all">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-card/90 via-dark-card/20 to-transparent"></div>
+                    </div>
+                    <div class="p-7">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="icon-circle w-10 h-10 min-w-[40px] min-h-[40px]">
+                                <i data-lucide="shield-check" class="h-5 w-5 text-dark-bg stroke-2"></i>
+                            </div>
+                            <h3
+                                class="text-lg font-display font-bold text-white group-hover:text-brand-yellow transition-colors">
+                                Soluções Confiáveis</h3>
+                        </div>
+                        <p class="text-gray-400 text-sm leading-relaxed">Profissionais qualificados e treinados para
+                            oferecer soluções confiáveis para todos os seus problemas automotivos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== QUEM SOMOS ==================== -->
+    <section class="py-24 relative overflow-hidden"
+        style="background: linear-gradient(135deg, #000000 0%, #0a0a0a 100%); border-top: 1px solid #222222; border-bottom: 1px solid #222222;">
+        <div class="absolute inset-0 opacity-10"
+            style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 30px 30px;">
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto items-center reveal-section text-center">
+                <!-- Text -->
+                <div class="space-y-6">
+                    <span class="text-brand-yellow font-semibold font-mono tracking-wider uppercase text-xs">Nossa
+                        história</span>
+                    <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white leading-tight">
+                        Quem somos
+                    </h2>
+                    <span class="accent-line mx-auto"></span>
+                    <p class="text-gray-200 text-base leading-relaxed">
+                        Somos uma empresa especializada em <strong class="text-white">troca de óleo, filtros, óleo de câmbio automático e manutenção preventiva</strong> dedicada a oferecer
+                        soluções confiáveis e serviços de alta qualidade para o seu veículo.
+                    </p>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Contamos com uma equipe de profissionais qualificados, equipamentos modernos e produtos de primeira linha para te oferecer sempre o melhor. Nossa missão é ser a referência em troca de óleo de toda a região de Palhoça/SC.
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-4 pt-2">
+                        <div class="flex items-center gap-2 bg-white/10 px-4 py-2.5 rounded-lg">
+                            <i data-lucide="check-circle" class="h-4 w-4 text-brand-yellow"></i>
+                            <span class="text-white text-xs font-semibold">Qualidade Garantida</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white/10 px-4 py-2.5 rounded-lg">
+                            <i data-lucide="check-circle" class="h-4 w-4 text-brand-yellow"></i>
+                            <span class="text-white text-xs font-semibold">Preço Justo</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white/10 px-4 py-2.5 rounded-lg">
+                            <i data-lucide="check-circle" class="h-4 w-4 text-brand-yellow"></i>
+                            <span class="text-white text-xs font-semibold">Atendimento Rápido</span>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/5548988556565?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento."
+                        target="_blank"
+                        class="btn-yellow inline-flex items-center gap-2 px-8 py-4 rounded-xl text-base font-display font-extrabold shadow-xl">
+                        <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.733-1.455L0 24z" />
+                        </svg>
+                        Fale Conosco
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== DEPOIMENTOS ==================== -->
+    <section id="reviews" class="py-24 bg-dark-bg border-t border-dark-border scroll-mt-10 relative overflow-hidden">
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-brand-yellow/30 to-transparent">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal-section">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-brand-yellow font-semibold font-mono tracking-wider uppercase text-xs">Quem já fez
+                    aprova</span>
+                <h2 class="text-3xl sm:text-4xl font-display font-extrabold tracking-tight mt-3 mb-4">Depoimentos de
+                    Clientes</h2>
+                <span class="accent-line mx-auto"></span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div
+                    class="bg-dark-card border border-dark-border p-7 rounded-2xl flex flex-col justify-between hover:border-brand-yellow/30 transition-all duration-300 shadow-xl">
+                    <div class="space-y-4">
+                        <div class="flex text-brand-yellow gap-0.5">
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm italic leading-relaxed">"Avaliação extremamente positiva da Tech Oil. Empresa que entrega excelência operacional, com padrão elevado de organização, ambiente moderno, limpo, transmitindo total confiança desde a recepção até a execução do serviço. Equipe técnica qualificada e atenção aos detalhes."</p>
+                    </div>
+                    <div class="border-t border-dark-border pt-5 mt-6">
+                        <span class="block text-sm font-bold text-white font-display">Jonathan Oliveira</span>
+                        <span class="text-[10px] text-brand-yellow font-mono">Local Guide • 163 avaliações</span>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div
+                    class="bg-dark-card border border-dark-border p-7 rounded-2xl flex flex-col justify-between hover:border-brand-yellow/30 transition-all duration-300 shadow-xl">
+                    <div class="space-y-4">
+                        <div class="flex text-brand-yellow gap-0.5">
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm italic leading-relaxed">"Excelente atendimento e transparência no serviço prestado, troquei filtro e óleo do câmbio lá eles tem a máquina própria para isso... me mandaram as fotos feitas durante o serviço e no final aproveitei para trocar óleo do motor também. Gostei bastante e recomendo!"</p>
+                    </div>
+                    <div class="border-t border-dark-border pt-5 mt-6">
+                        <span class="block text-sm font-bold text-white font-display">Anderson Santana</span>
+                        <span class="text-[10px] text-brand-yellow font-mono">3 avaliações • 10 fotos</span>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div
+                    class="bg-dark-card border border-dark-border p-7 rounded-2xl flex flex-col justify-between hover:border-brand-yellow/30 transition-all duration-300 shadow-xl">
+                    <div class="space-y-4">
+                        <div class="flex text-brand-yellow gap-0.5">
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm italic leading-relaxed">"Sem dúvida a melhor troca de óleo que já fui! Sou de São José e sempre venho trocar o óleo aqui, o atendimento é ótimo, o serviço de qualidade. A limpeza e cuidado do local é diferenciado. Parabéns pela qualidade!"</p>
+                    </div>
+                    <div class="border-t border-dark-border pt-5 mt-6">
+                        <span class="block text-sm font-bold text-white font-display">Vinicius Florendo Quadros</span>
+                        <span class="text-[10px] text-brand-yellow font-mono">Local Guide • 10 avaliações</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== LOCALIZAÇÃO ==================== -->
+    <section id="location" class="py-24 bg-dark-bg border-t border-dark-border scroll-mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal-section">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Info -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-brand-yellow font-semibold font-mono tracking-wider uppercase text-xs">Onde
+                        estamos</span>
+                    <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white leading-tight">
+                        Visite nossa oficina
+                    </h2>
+                    <span class="accent-line"></span>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Estrutura completa para receber seu veículo com o máximo cuidado, equipamentos homologados e
+                        atendimento personalizado.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div
+                            class="flex items-start gap-4 p-4 bg-dark-card rounded-xl border border-dark-border hover:border-brand-yellow/30 transition-all">
+                            <i data-lucide="map-pin" class="h-5 w-5 text-brand-yellow flex-shrink-0 mt-0.5"></i>
+                            <div>
+                                <h4 class="font-bold text-white text-sm font-display">Endereço</h4>
+                                <p class="text-gray-400 text-xs mt-0.5">Av. Atílio Pedro Pagani, 1429 - Pagani<br>Palhoça - SC, 88132-149</p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-start gap-4 p-4 bg-dark-card rounded-xl border border-dark-border hover:border-brand-yellow/30 transition-all">
+                            <i data-lucide="clock" class="h-5 w-5 text-brand-yellow flex-shrink-0 mt-0.5"></i>
+                            <div>
+                                <h4 class="font-bold text-white text-sm font-display">Horário de Funcionamento</h4>
+                                <p class="text-gray-400 text-xs mt-0.5">Segunda a Sexta: 07:30 às 18:30<br>Sábado: 07:30
+                                    às 13:00</p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-start gap-4 p-4 bg-dark-card rounded-xl border border-dark-border hover:border-brand-yellow/30 transition-all">
+                            <i data-lucide="phone" class="h-5 w-5 text-brand-yellow flex-shrink-0 mt-0.5"></i>
+                            <div>
+                                <h4 class="font-bold text-white text-sm font-display">Telefone</h4>
+                                <p class="text-gray-400 text-xs mt-0.5">(48) 98855-6565</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-3 pt-2">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Av.+At%C3%ADlio+Pedro+Pagani%2C+1429+-+Pagani%2C+Palho%C3%A7a+-+SC%2C+88132-149" target="_blank" rel="noopener"
+                            class="inline-flex items-center gap-2 bg-dark-card hover:bg-dark-border text-gray-300 hover:text-white px-5 py-3 rounded-lg text-xs font-bold border border-dark-border hover:border-gray-500 transition-all font-display uppercase tracking-wider">
+                            <i data-lucide="navigation" class="h-4 w-4 text-brand-yellow"></i>
+                            Como Chegar
+                        </a>
+                        <a href="https://wa.me/5548988556565" target="_blank"
+                            class="btn-yellow inline-flex items-center gap-2 px-5 py-3 rounded-lg text-xs font-display font-bold">
+                            <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.733-1.455L0 24z" />
+                            </svg>
+                            WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Map -->
+                <div class="lg:col-span-7">
+                    <div
+                        class="bg-dark-card p-2 rounded-2xl border border-dark-border shadow-2xl overflow-hidden h-[420px]">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3534.6934898715873!2d-48.682889!3d-27.6408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95273577d2424075%3A0xe104cf5e2978ee8a!2sAv.%20At%C3%ADlio%20Pedro%20Pagani%2C%201429%20-%20Pagani%2C%20Palho%C3%A7a%20-%20SC%2C%2088132-149!5e0!3m2!1spt-BR!2sbr!4v1721470000000!5m2!1spt-BR!2sbr"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            class="rounded-xl filter invert-[0.85] hue-rotate-[190deg] saturate-[0.8]">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="hex-bg pt-16 pb-8 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Top grid -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+                <!-- Brand -->
+                <div class="md:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-full overflow-hidden flex items-center justify-center shadow-lg border border-brand-yellow bg-black">
+                            <img src="assets/logo.svg" alt="Logo Tech Oil" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <p class="font-display font-extrabold text-white text-lg leading-none">Tech Oil</p>
+                            <p class="text-brand-yellow text-xs font-semibold tracking-widest uppercase">Troca de Óleo</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed max-w-xs">
+                        Somos especialistas em troca de óleo e manutenção preventiva dedicados a oferecer serviços de alta qualidade em Palhoça/SC.
+                    </p>
+                    <div class="flex gap-3 pt-2">
+                        <a href="#"
+                            class="w-9 h-9 bg-white/10 hover:bg-brand-yellow/20 rounded-lg flex items-center justify-center transition-all border border-white/10 hover:border-brand-yellow/40">
+                            <svg class="h-4 w-4 text-white fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="w-9 h-9 bg-white/10 hover:bg-brand-yellow/20 rounded-lg flex items-center justify-center transition-all border border-white/10 hover:border-brand-yellow/40">
+                            <svg class="h-4 w-4 text-white fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                            </svg>
+                        </a>
+                        <a href="https://wa.me/5548988556565" target="_blank"
+                            class="w-9 h-9 bg-white/10 hover:bg-green-600/30 rounded-lg flex items-center justify-center transition-all border border-white/10 hover:border-green-500/40">
+                            <svg class="h-4 w-4 fill-white" viewBox="0 0 24 24">
+                                <path
+                                    d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.733-1.455L0 24z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Endereço -->
+                <div class="space-y-3">
+                    <h4 class="font-display font-bold text-white text-base border-b border-brand-yellow/30 pb-2 mb-4">
+                        Endereço</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Av. Atílio Pedro Pagani, 1429 - Pagani<br>
+                        Palhoça - SC, 88132-149
+                    </p>
+                    <a href="tel:48988556565"
+                        class="text-brand-yellow text-sm font-semibold hover:text-white transition-colors">(48)
+                        98855-6565</a>
+                </div>
+
+                <!-- Siga-nos -->
+                <div class="space-y-3">
+                    <h4 class="font-display font-bold text-white text-base border-b border-brand-yellow/30 pb-2 mb-4">
+                        Siga-nos</h4>
+                    <a href="#"
+                        class="flex items-center gap-3 text-gray-400 hover:text-brand-yellow transition-colors text-sm group">
+                        <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                        </svg>
+                        Facebook
+                    </a>
+                    <a href="#"
+                        class="flex items-center gap-3 text-gray-400 hover:text-brand-yellow transition-colors text-sm group">
+                        <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                        </svg>
+                        Instagram
+                    </a>
+                    <a href="https://wa.me/5548988556565" target="_blank"
+                        class="flex items-center gap-3 text-gray-400 hover:text-green-400 transition-colors text-sm group">
+                        <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.733-1.455L0 24z" />
+                        </svg>
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Bottom bar -->
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-8 text-xs text-gray-500">
+                <p>© 2026 Tech Oil. Todos os direitos reservados.</p>
+                <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-right">
+                    <p class="text-gray-500">Palhoça/SC — (48) 98855-6565</p>
+                    <span class="hidden sm:inline text-gray-700">|</span>
+                    <p>Desenvolvido por <a href="https://wa.me/5548992233575" target="_blank" class="text-brand-yellow hover:text-white transition-colors font-medium">Maré Flow</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== WhatsApp Float Button ==================== -->
+    <a href="https://wa.me/5548988556565?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento." target="_blank"
+        class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 p-4 rounded-full shadow-2xl transition-all flex items-center justify-center wa-float"
+        aria-label="Fale conosco no WhatsApp">
+        <svg class="h-7 w-7 text-white fill-current" viewBox="0 0 24 24">
+            <path
+                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.733-1.455L0 24zm6.79-11.767c.186-.312.373-.52.56-.728.188-.208.25-.312.374-.52.125-.208.062-.375-.031-.563l-.701-1.687c-.1-.24-.2-.2-.293-.204h-.293c-.1 0-.271.037-.417.186-.146.15-.562.548-.562 1.332 0 .785.573 1.543.652 1.647.08.104 1.116 1.705 2.721 2.399.38.163.678.261.91.335.383.121.731.104 1.006.063.307-.046.942-.385 1.077-.758.136-.375.136-.697.095-.758-.04-.062-.146-.104-.307-.186l-1.859-.916c-.146-.073-.255-.104-.365.063l-.802 1.002c-.104.135-.208.156-.375.073-1.684-.843-2.613-1.928-3.08-2.736z" />
+        </svg>
+    </a>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script>
+        lucide.createIcons();
+
+        // Header scroll behavior
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 40) {
+                header.classList.remove('bg-transparent', 'py-4');
+                header.classList.add('bg-dark-bg/95', 'backdrop-blur-md', 'border-b', 'border-dark-border', 'py-2', 'shadow-2xl');
+            } else {
+                header.classList.add('bg-transparent', 'py-4');
+                header.classList.remove('bg-dark-bg/95', 'backdrop-blur-md', 'border-b', 'border-dark-border', 'py-2', 'shadow-2xl');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const menuToggleBtn = document.getElementById('menu-toggle');
+
+        menuToggleBtn.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.add('animate-slide-down');
+                menuIcon.setAttribute('data-lucide', 'x');
+            } else {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('animate-slide-down');
+                menuIcon.setAttribute('data-lucide', 'menu');
+            }
+            lucide.createIcons();
+        });
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('animate-slide-down');
+            menuIcon.setAttribute('data-lucide', 'menu');
+            lucide.createIcons();
+        }
+
+        // Scroll reveal
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.05 });
+
+        document.querySelectorAll('.reveal-section').forEach(el => {
+            revealObserver.observe(el);
+        });
+
+
+
+
+        // ==================== DIALYSIS INTERACTIVE ENGINE ====================
+        const canvas = document.getElementById('hose-canvas');
+        const ctx = canvas.getContext('2d');
+        const canvasArea = document.getElementById('interaction-container'); // Agora usa o container inteiro para permitir interações em toda a área
+        const originEl = document.getElementById('hose-origin');
+        const pressureDisplay = document.getElementById('pressure-val');
+
+        let points = [];
+        const numPoints = 18;
+        const segmentLength = 22;
+        const gravity = 0.25;
+        const friction = 0.94;
+        let mouse = { x: 0, y: 0, active: false };
+
+        function initHose() {
+            canvas.width = canvasArea.offsetWidth;
+            canvas.height = canvasArea.offsetHeight;
+            points = [];
+            for (let i = 0; i < numPoints; i++) {
+                points.push({ x: 0, y: 0, oldX: 0, oldY: 0 });
+            }
+        }
+
+        window.addEventListener('resize', initHose);
+        initHose();
+
+        canvasArea.addEventListener('mousemove', (e) => {
+            const rect = canvasArea.getBoundingClientRect();
+            mouse.x = e.clientX - rect.left;
+            mouse.y = e.clientY - rect.top;
+            mouse.active = true;
+        });
+
+        canvasArea.addEventListener('mouseleave', () => { 
+            if (!activePort) {
+                mouse.active = false;
+            }
+        });
+
+        let activePort = null;
+
+        // Clique nas portas para selecionar
+        document.querySelectorAll('.hose-connection-point').forEach(port => {
+            port.addEventListener('click', (e) => {
+                e.stopPropagation();
+                activePort = port;
+                mouse.active = true;
+            });
+        });
+
+        // Clique fora para desmarcar
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.hose-connection-point')) {
+                activePort = null;
+            }
+        });
+
+        // Suporte para dispositivos móveis (Touch)
+        canvasArea.addEventListener('touchmove', (e) => {
+            const rect = canvasArea.getBoundingClientRect();
+            mouse.x = e.touches[0].clientX - rect.left;
+            mouse.y = e.touches[0].clientY - rect.top;
+            mouse.active = true;
+        }, { passive: true });
+
+        canvasArea.addEventListener('touchstart', (e) => {
+            if (e.target.closest('.hose-connection-point')) return; // ignora se clicou direto no ponto
+            const rect = canvasArea.getBoundingClientRect();
+            mouse.x = e.touches[0].clientX - rect.left;
+            mouse.y = e.touches[0].clientY - rect.top;
+            mouse.active = true;
+        }, { passive: true });
+
+        canvasArea.addEventListener('touchend', () => { 
+            if (!activePort) {
+                // mouse.active = false;
+            }
+        });
+
+        function updateHose() {
+            // Garante que o canvas sempre tenha o tamanho correto, mesmo após redimensionamentos ou carregamento no celular
+            if (canvas.width !== canvasArea.offsetWidth || canvas.height !== canvasArea.offsetHeight) {
+                canvas.width = canvasArea.offsetWidth;
+                canvas.height = canvasArea.offsetHeight;
+            }
+
+            // Fix origin position relative to canvas
+            const originRect = originEl.getBoundingClientRect();
+            const canvasRect = canvasArea.getBoundingClientRect();
+            const startX = originRect.left - canvasRect.left + (originRect.width / 2);
+            const startY = originRect.top - canvasRect.top + (originRect.height / 2);
+
+            points[0].x = startX;
+            points[0].y = startY;
+
+            // Se existe uma porta ativa por clique, força o mouse para o centro dela
+            if (activePort) {
+                const portRect = activePort.getBoundingClientRect();
+                mouse.x = portRect.left - canvasRect.left + (portRect.width / 2);
+                mouse.y = portRect.top - canvasRect.top + (portRect.height / 2);
+            }
+
+            // Follow Mouse
+            if (mouse.active) {
+                const lastPoint = points[numPoints - 1];
+                lastPoint.x = mouse.x;
+                lastPoint.y = mouse.y;
+            }
+
+            // Physics integration
+            for (let i = 1; i < numPoints; i++) {
+                const p = points[i];
+                const vx = (p.x - p.oldX) * friction;
+                const vy = (p.y - p.oldY) * friction;
+
+                p.oldX = p.x;
+                p.oldY = p.y;
+                p.x += vx;
+                p.y += vy + gravity;
+            }
+
+            // Constraints
+            for (let j = 0; j < 6; j++) {
+                for (let i = 1; i < numPoints; i++) {
+                    const p1 = points[i - 1];
+                    const p2 = points[i];
+                    const dx = p2.x - p1.x;
+                    const dy = p2.y - p1.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    const error = (dist - segmentLength) / dist;
+
+                    if (i === numPoints - 1 && mouse.active) {
+                        p1.x += dx * error;
+                        p1.y += dy * error;
+                    } else {
+                        p1.x += dx * error * 0.5;
+                        p1.y += dy * error * 0.5;
+                        p2.x -= dx * error * 0.5;
+                        p2.y -= dy * error * 0.5;
+                    }
+                }
+            }
+
+            // Hit Detection for Ports
+            const endPoint = points[numPoints - 1];
+            let anyActive = false;
+            let activeColorClass = '';
+            let activePortType = null;
+
+            document.querySelectorAll('.hose-connection-point').forEach(port => {
+                const portRect = port.getBoundingClientRect();
+                const portCenterX = portRect.left - canvasRect.left + (portRect.width / 2);
+                const portCenterY = portRect.top - canvasRect.top + (portRect.height / 2);
+
+                const d = Math.hypot(endPoint.x - portCenterX, endPoint.y - portCenterY);
+                const infoCard = port.querySelector('.info-card');
+
+                if (d < 50 || activePort === port) {
+                    port.classList.add('active');
+                    infoCard.style.opacity = '1';
+                    infoCard.style.transform = 'scale(1)';
+                    infoCard.style.pointerEvents = 'auto';
+                    anyActive = true;
+                    activePortType = port.dataset.type;
+                    
+                    if (port.dataset.type === 'riscos') {
+                        activeColorClass = 'text-brand-red';
+                    } else if (port.dataset.type === 'corretiva') {
+                        activeColorClass = 'text-brand-yellow';
+                    } else if (port.dataset.type === 'preventiva') {
+                        activeColorClass = 'text-green-400';
+                    }
+                    
+                    if (activePort === port) {
+                        endPoint.x = portCenterX;
+                        endPoint.y = portCenterY;
+                    }
+                } else {
+                    port.classList.remove('active');
+                    infoCard.style.opacity = '0';
+                    infoCard.style.transform = 'scale(0.95)';
+                    infoCard.style.pointerEvents = 'none';
+                }
+            });
+
+            pressureDisplay.classList.remove('text-brand-yellow', 'text-green-400', 'text-brand-red');
+
+            if (anyActive) {
+                if (activeColorClass) {
+                    pressureDisplay.classList.add(activeColorClass);
+                }
+                
+                if (activePortType === 'preventiva') {
+                    // Verde: Alta e Boa
+                    pressureDisplay.textContent = (12.0 + Math.random() * 0.8).toFixed(1);
+                } else if (activePortType === 'corretiva') {
+                    // Amarela: Pela metade
+                    pressureDisplay.textContent = (6.0 + Math.random() * 0.6).toFixed(1);
+                } else if (activePortType === 'riscos') {
+                    // Vermelho: Zero pressão
+                    pressureDisplay.textContent = '0.0';
+                }
+            } else {
+                pressureDisplay.classList.add('text-brand-yellow');
+                // Desconectado: Zero pressão
+                pressureDisplay.textContent = '0.0';
+            }
+        }
+
+        function drawHose() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw Shadow
+            ctx.beginPath();
+            ctx.lineWidth = 14;
+            ctx.lineJoin = 'round';
+            ctx.lineCap = 'round';
+            ctx.strokeStyle = 'rgba(0,0,0,0.2)';
+            ctx.moveTo(points[0].x, points[0].y + 8);
+            for (let i = 1; i < numPoints; i++) ctx.lineTo(points[i].x, points[i].y + 8);
+            ctx.stroke();
+
+            // Draw Outer Hose
+            ctx.beginPath();
+            ctx.lineWidth = 10;
+            ctx.strokeStyle = '#1e293b';
+            ctx.moveTo(points[0].x, points[0].y);
+            for (let i = 1; i < numPoints; i++) ctx.lineTo(points[i].x, points[i].y);
+            ctx.stroke();
+
+            // Draw Inner Detail (Highlight)
+            ctx.beginPath();
+            ctx.lineWidth = 3;
+            ctx.strokeStyle = 'rgba(255,255,255,0.08)';
+            ctx.moveTo(points[0].x - 2, points[0].y);
+            for (let i = 1; i < numPoints; i++) ctx.lineTo(points[i].x - 2, points[i].y);
+            ctx.stroke();
+
+            // Draw Hose Tip
+            const tip = points[numPoints - 1];
+            ctx.fillStyle = '#FFC107';
+            ctx.beginPath();
+            ctx.arc(tip.x, tip.y, 8, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.strokeStyle = 'white';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            updateHose();
+            requestAnimationFrame(drawHose);
+        }
+
+        drawHose();
+    </script>
+
+    <!-- Hero Carousel Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slidesContainer = document.getElementById('carousel-slides');
+            const dots = document.querySelectorAll('.carousel-dot');
+            const prevBtn = document.getElementById('carousel-prev');
+            const nextBtn = document.getElementById('carousel-next');
+            const carousel = document.getElementById('hero-carousel');
+            
+            if (!slidesContainer || dots.length === 0) return;
+
+            let currentIndex = 0;
+            const totalSlides = dots.length;
+            const intervalTime = 3000; // 3 seconds
+            let slideInterval;
+
+            function goToSlide(index) {
+                if (index < 0) index = totalSlides - 1;
+                if (index >= totalSlides) index = 0;
+                
+                currentIndex = index;
+                slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+                // Update dots styling
+                dots.forEach((dot, i) => {
+                    if (i === currentIndex) {
+                        dot.classList.remove('bg-white/40', 'w-2.5');
+                        dot.classList.add('bg-brand-yellow', 'w-6');
+                    } else {
+                        dot.classList.remove('bg-brand-yellow', 'w-6');
+                        dot.classList.add('bg-white/40', 'w-2.5');
+                    }
+                });
+            }
+
+            function nextSlide() {
+                goToSlide(currentIndex + 1);
+            }
+
+            function prevSlide() {
+                goToSlide(currentIndex - 1);
+            }
+
+            function startTimer() {
+                stopTimer();
+                slideInterval = setInterval(nextSlide, intervalTime);
+            }
+
+            function stopTimer() {
+                if (slideInterval) clearInterval(slideInterval);
+            }
+
+            // Event Listeners
+            if (nextBtn) nextBtn.addEventListener('click', () => { nextSlide(); startTimer(); });
+            if (prevBtn) prevBtn.addEventListener('click', () => { prevSlide(); startTimer(); });
+
+            dots.forEach(dot => {
+                dot.addEventListener('click', (e) => {
+                    const index = parseInt(e.target.getAttribute('data-index'), 10);
+                    goToSlide(index);
+                    startTimer();
+                });
+            });
+
+            if (carousel) {
+                carousel.addEventListener('mouseenter', stopTimer);
+                carousel.addEventListener('mouseleave', startTimer);
+            }
+
+            // Touch Swipe Support for Mobile
+            let startX = 0;
+            let endX = 0;
+
+            if (carousel) {
+                carousel.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
+                    stopTimer();
+                }, { passive: true });
+
+                carousel.addEventListener('touchend', (e) => {
+                    endX = e.changedTouches[0].clientX;
+                    const diffX = startX - endX;
+                    if (Math.abs(diffX) > 40) {
+                        if (diffX > 0) nextSlide();
+                        else prevSlide();
+                    }
+                    startTimer();
+                }, { passive: true });
+            }
+
+            // Initialize
+            goToSlide(0);
+            startTimer();
+        });
+    </script>
+</body>
+
+</html>

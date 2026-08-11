@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="yellowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD54F"/>
+      <stop offset="100%" stop-color="#FFC107"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  <rect width="400" height="400" rx="48" fill="#000000"/>
+  <rect x="8" y="8" width="384" height="384" rx="42" fill="none" stroke="url(#yellowGrad)" stroke-width="4" opacity="0.8"/>
+  <g transform="translate(200, 155)">
+    <!-- Oil Drop Icon with Gear Accent -->
+    <path d="M0 -65 C -28 -20, -50 8, -50 35 C -50 62, -28 85, 0 85 C 28 85, 50 62, 50 35 C 50 8, 28 -20, 0 -65 Z" fill="url(#yellowGrad)"/>
+    <path d="M-12 18 C -22 18, -32 6, -32 -10 C -32 -20, -25 -32, -15 -42" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity="0.65"/>
+    <circle cx="12" cy="45" r="7" fill="#FFFFFF" opacity="0.7"/>
+  </g>
+  <!-- Text -->
+  <text x="200" y="308" text-anchor="middle" font-family="'Outfit', 'Arial Black', 'Helvetica Neue', sans-serif" font-weight="900" font-size="54" letter-spacing="2">
+    <tspan fill="#FFFFFF">TECH </tspan>
+    <tspan fill="url(#yellowGrad)">OIL</tspan>
+  </text>
+  <text x="200" y="348" text-anchor="middle" font-family="'Inter', 'Arial', sans-serif" font-weight="800" font-size="17" fill="#FFC107" letter-spacing="7">TROCA DE ÓLEO</text>
+</svg>
